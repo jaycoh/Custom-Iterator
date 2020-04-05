@@ -17,3 +17,7 @@ How it works:
 I chose to showcase this pattern with a small program describing a wine cellar (WineCellar.java) that contains wine bottles (of type WineBottle).
 
 I chose this because wine bottles are an integral part of a wine cellar, and when dealing with a program for a cellar it feels natural to go through all the bottles in the cellar. WineCellar contains a list of WineBottle in the field bottles. Notice that WineCellar implements Iterable<WineBottle>. It also contains the function iterator(), which returns bottles.iterator(). This tells the program that WineCellar should use the iterator over bottles.
+ 
+ When the program asks to iterate through an instance of WineCellar, it utilizes the iterator returned by WineCellar.iterator(). This iterator (since it is the iterator attached to the bottles field) iterates through the values found in bottles.
+ 
+The code to iterate through the bottles in a cellar is ran twice: once without utilizing the iterator design pattern, and once with the iterator design pattern. Notice that the first iteration (without the design pattern) requires certain details of WineCellar's implementation that the second iteration (with the DP) simply does not need. 
