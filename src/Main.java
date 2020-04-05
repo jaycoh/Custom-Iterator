@@ -12,7 +12,9 @@ public class Main {
         for (WineBottle wb : cellar.bottles) {
             System.out.println(wb);
         }
-        System.out.println("\n\n This time with iterator:");
+
+        // With iterator:
+
         for (WineBottle wb : cellar) {
             System.out.println(wb);
         }

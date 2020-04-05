@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class WineCellar implements Iterable<WineBottle>{
+public class WineCellar implements Iterable<WineBottle> {
 
     public List<WineBottle> bottles = new ArrayList<>();
 
@@ -12,9 +12,7 @@ public class WineCellar implements Iterable<WineBottle>{
 
     public void removeBottle(WineBottle b) {
         for (WineBottle wb : bottles) {
-            if (wb.type == b.type && wb.age == b.age) {
-                bottles.remove(wb);
-            }
+            if (wb.equals(b)) bottles.remove(wb);
         }
     }
 
