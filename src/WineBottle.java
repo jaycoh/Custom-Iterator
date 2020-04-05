@@ -1,7 +1,7 @@
 public class WineBottle {
 
-    public String type;
-    public int age;
+    private String type;
+    private int age;
 
     public WineBottle(String type, int age) {
         this.type = type;
@@ -15,6 +15,6 @@ public class WineBottle {
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof WineBottle)) return false;
-        return (((WineBottle) o).type == this.type && ((WineBottle) o).age == this.age);
+        return (((WineBottle) o).type.equals(this.type) && ((WineBottle) o).age == this.age);
     }
 }
