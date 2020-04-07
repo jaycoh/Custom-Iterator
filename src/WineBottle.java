@@ -1,9 +1,13 @@
 public class WineBottle {
 
-    private String type;
+    public enum Type {
+        red,
+        white;
+    }
+    private Type type;
     private int age;
 
-    public WineBottle(String type, int age) {
+    public WineBottle(Type type, int age) {
         this.type = type;
         this.age = age;
     }
@@ -12,7 +16,7 @@ public class WineBottle {
         return type + " wine that is " + age + " years old";
     }
 
-    public String getType() {
+    public Type getType() {
         return this.type;
     }
 

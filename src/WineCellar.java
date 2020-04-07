@@ -8,8 +8,8 @@ public class WineCellar implements Iterable<WineBottle>{
     private List<WineBottle> whiteWines = new ArrayList<>();
 
     public void addBottle(WineBottle b) {
-        if (b.getType() == "Red") redWines.add(b);
-        if (b.getType() == "White") whiteWines.add(b);
+        if (b.getType() == WineBottle.Type.red) redWines.add(b);
+        if (b.getType() == WineBottle.Type.white) whiteWines.add(b);
     }
 
     @Override
