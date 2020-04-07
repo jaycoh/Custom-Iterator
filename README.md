@@ -1,7 +1,7 @@
 # Custom Iterator Pattern
 
 ### Description
-An overview of the iterator pattern and it's purpose can be found [in my previous example](https://github.com/jaycoh/Iterator-Pattern-Built-In)
+An overview of the iterator pattern and it's purpose can be found [in my previous example.](https://github.com/jaycoh/Iterator-Pattern-Built-In)
 
 Take our toy store example. Say it now has two lists: one for inventory and one for backlog. We could iterate over both of these
 lists, but to do so we would need to somehow combine them into a singular list.
