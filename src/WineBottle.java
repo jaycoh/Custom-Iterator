@@ -4,6 +4,7 @@ public class WineBottle {
         red,
         white;
     }
+    
     private Type type;
     private int age;
 
