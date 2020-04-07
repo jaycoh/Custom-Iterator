@@ -12,6 +12,10 @@ public class WineBottle {
         return type + " wine that is " + age + " years old";
     }
 
+    public String getType() {
+        return this.type;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof WineBottle)) return false;
