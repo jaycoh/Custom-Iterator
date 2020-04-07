@@ -1,15 +1,26 @@
-# Built In Iterator Pattern
+# Custom Iterator Pattern
 
 ### Description
-Say you have a program to represent a toy store. This toy store would have some sort of field to represent its inventory, likely in the form of a list of toys.
+An overview of the iterator pattern and it's purpose can be found [in my previous example](https://github.com/jaycoh/Iterator-Pattern-Built-In)
 
-It is likely that you would want to iterate through the toys in a toy store. This would make sense, as a collection of toys is inherently a part of any toy store. However, to do so normally would require accessing internal implemtation - whomever created the toy store class likely did not want other portions of the program accessing its fields. Even if there existed a getter for the toy list, we would still be given a list of all the toys in the store - probably giving away more information than desired.
+Take our toy store example. Say it now has two lists: one for inventory and one for backlog. We could iterate over both of these
+lists, but to do so we would need to somehow combine them into a singular list.
 
-The iterator pattern is best in these cases - when a class contains a list of items that are inherently integral to the class, and we need to allow our program to iterate through this list without giving away any sort of internal information.
+Or, say we only wanted every third toy from the inventory list. We would have to create a new structure of every third toy before
+using its built-in iterator.
+
+Or, say we wanted to iterate over a different structure, such as a graph. We would need to put all of the information into
+a new structure.
+
+All of the solutions to these problems require us to modify our existing structures, which goes against the idea of the
+iterator pattern. Instead, what we should do is create a custom iterator to allow us to iterate over our class without
+changing any of our current structures.
 
 How it works:
-- The class that is to be made iterable extends Iterable<Item>, a built in interface. Item is the type of data you want to iterate through (Item would be Toy in the above example).
-- The class implements the method iterator(), which returns the iterator that is used by the class. The iterator corresponds to the list we are iterating over, any each type of list has a built in iterator.
+- The class that is to be made iterable still extends Iterable<Item>, and iterator() returns an instance of our custom iterator
+- Our custom iterator is defined in a private inner class - thus giving it access to all the internal information needed
+- Our inner class has two functions: hasNext() which returns true iff there is another element to iterate through, and
+next(), which returns the next element to iterate through. There is often some sort of counter.
 - The iterator is used when a for loop is executed through an object of the Item type (e.g. for (Toy t: toyStore) )
  
 ### My example
