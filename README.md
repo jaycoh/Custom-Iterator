@@ -31,5 +31,8 @@ where the implementation differs. However, now that we have two lists, it is now
 What you may find interesting is that rather than use a counter, and compare it to the size of each list, I used the built in iterators for each of the wine lists. While I did not need to do this, I chose to use the built in iterators because they already have the functionality I need. When my function hasNext() is called, I just need to know that at least one of my lists has another wine bottle not yet iterated through. So I just check that one of the iterators' hasNext() functions returns true. When next() is called, I first check if my list of red wines has another bottle to iterate through (by using redWine's iterator's hasNext() function). If it does, I return redWine's iterator's next, otherwise I return whiteWine's iterator's next. Remember that the hasNext() function will only update once it's iterator has next() called on it.
 
 
+ ### Result
  
-The code to iterate through the bottles in a cellar is ran twice: once without utilizing the iterator design pattern, and once with the iterator design pattern. Notice that the first iteration (without the design pattern) requires certain details of WineCellar's implementation that the second iteration (with the DP) simply does not need. 
+ You'll notice that the output when running Main.java here differs from Main.java in my previous project. That is because I set up my custom iterator in a way that red wines are iterated through first, then white wines. I could have implemented it such that the iteration alternates between red and white wines, perhaps with a boolean to keep track of which type of wine we are on.
+ 
+ A big advantage of custom iteratos is the amount of control over how/what we iterate over. Some things I could have done are: iterate through a reverse list, iterate through every n-*th* item in the list, or iterate through only elements that had certain attributes.
