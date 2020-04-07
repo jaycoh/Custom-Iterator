@@ -20,13 +20,13 @@ How it works:
 - The class that is to be made iterable still extends Iterable<Item>, and iterator() returns an instance of our custom iterator
 - Our custom iterator is defined in a private inner class - thus giving it access to all the internal information needed
 - Our inner class has two functions: hasNext() which returns true iff there is another element to iterate through, and
-next(), which returns the next element to iterate through. There is often some sort of counter.
-- The iterator is used when a for loop is executed through an object of the Item type (e.g. for (Toy t: toyStore) )
+next(), which returns the next element to iterate through. There is often some sort of counter to help these functions.
  
 ### My example
 
-I chose to showcase this pattern with a small program describing a wine cellar (WineCellar.java) that contains wine bottles (of type WineBottle).
-
+I used a nearly identical example to my one from before with the built-in iterator. Here, the difference is that I split
+the field for wineBottles into two: one for red wines and one for white wines. I did this to make it easy to compare the two, so you can see
+where the implementation differs.
 I chose this because wine bottles are an integral part of a wine cellar, and when dealing with a program for a cellar it feels natural to go through all the bottles in the cellar. WineCellar contains a list of WineBottle in the field bottles. Notice that WineCellar implements Iterable<WineBottle>. It also contains the function iterator(), which returns bottles.iterator(). This tells the program that WineCellar should use the iterator over bottles.
  
  When the program asks to iterate through an instance of WineCellar, it utilizes the iterator returned by WineCellar.iterator(). This iterator (since it is the iterator attached to the bottles field) iterates through the values found in bottles.
